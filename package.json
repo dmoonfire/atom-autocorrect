@@ -1,7 +1,7 @@
 {
   "name": "autocorrect",
   "main": "./lib/index",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A framework for providing word-based autocorrections in Atom.",
   "keywords": [
     "atom",
