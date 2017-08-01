@@ -11,8 +11,6 @@ src/*.js
 src/*.js.map
 src/*.d.ts
 dist/
-lib/
-spec/
 
 node_modules/
 typings/
