@@ -1,0 +1,22 @@
+# See https://atom.io/docs/latest/hacking-atom-package-word-count#menus for more details
+'context-menu':
+  'atom-text-editor': [
+    {
+      'label': 'Toggle autocorrect'
+      'command': 'autocorrect:toggle'
+    }
+  ]
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'AutoCorrect'
+      'submenu': [
+        {
+          'label': 'Toggle'
+          'command': 'autocorrect:toggle'
+        }
+      ]
+    ]
+  }
+]
