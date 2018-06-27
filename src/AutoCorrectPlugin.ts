@@ -56,6 +56,24 @@ export class AutoCorrectPlugin implements AutoCorrectState {
     }
 
     private toggle() {
-        // Do nothing.
+        // Get the editor for the current buffer. If we can't find one, there
+        // is nothing to do.
+        const editor = atom.workspace.getActiveTextEditor();
+
+        if (!editor)
+        {
+            return;
+        }
+
+        // Get the view for the editor.
+        const view = this.editorViews.get(editor);
+
+        if (!view)
+        {
+            return;
+        }
+
+        // Have the view toggle itself.
+        view.toggle();
     }
 }

@@ -15,6 +15,7 @@ export class AutoCorrectView {
     private checkRegexp = /([\n\s.\"])/;
     private state: AutoCorrectState;
     private editor: fakeAtom.IEditor;
+    private enabled = true;
 
     /**
      * Contains the persistent subscriptions on the editor buffer.
@@ -109,6 +110,12 @@ export class AutoCorrectView {
     }
 
     private processChange(change: fakeAtom.TextChange): void {
+        // If we are not enabled, then don't do anything.
+        if (!this.enabled)
+        {
+            return;
+        }
+
         // We only care if we see a character that indicates autocomplete
         // should be checked. In most cases, this is a whitespace or
         // terminating punctuation (e.g., not ones used in contractions).
@@ -268,6 +275,14 @@ export class AutoCorrectView {
         for (const change of changes) {
             buffer.setTextInRange(change.range, change.word);
         }
+    }
+
+    /**
+     * Alternates the enabled state for the current view.
+     */
+    public toggle(): void
+    {
+        this.enabled = !this.enabled;
     }
 }
 
