@@ -7,3 +7,7 @@ This package provides a framework (but not actual corrections) for implementing 
 The following are additional packages that can be installed that will provide actual corrections:
 
 * [AutoCorrect for Atom - English](https://github.com/dmoonfire/atom-autocorrect-en): Fixes common English typos while typing.
+
+## Implementing Packages
+
+To implement a new autocorrection plugin, see the [plugin documentation](docs/plugin.md).
