@@ -16,7 +16,7 @@ export interface WordCorrection {
      *
      * @param {IEditor} buffer The buffer associated with the word being
      * changed.
-     * @param
+     * @param {ChangeableWord} change: The word that could be corrected.
      */
     correctWord(buffer: AtomCore.IEditor, change: ChangeableWord): void;
 }
